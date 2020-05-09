@@ -27,7 +27,8 @@ Alternatively, [download a release](https://github.com/oseille/container-builder
 
 ## Documentation
 
-We do not provide exhaustive documentation. Please read the code and the comments ;)
+See [container-builder-bridge-php-di](https://github.com/oseille/container-builder-bridge-php-di) and [container-builder-bridge-league](https://github.com/oseille/container-builder-bridge-league) for concrete implementation examples.
+
 
 ## Test
 
