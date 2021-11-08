@@ -27,7 +27,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Ojullien\\ContainerBuilderBridge\\": "src/"
+            "OJullien\\ContainerBuilderBridge\\": "src/"
         }
     },
     "require-dev": {
@@ -41,7 +41,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "OjullienTest\\": "tests/"
+            "OJullienTest\\": "tests/"
         }
     },
     "config": {
@@ -54,10 +54,8 @@
             "@squizlabs"
         ],
         "psalm": "vendor/bin/psalm --config=linters/psalm.xml --threads=4 --show-info=true",
-        "psalm_baseline": "vendor/bin/psalm --config=linters/psalm.xml --show-info=true --set-baseline=linters/psalm-baseline.xml",
         "squizlabs": "vendor/bin/phpcbf --standard=linters/phpcs.xml --no-cache",
         "stan": "vendor/bin/phpstan analyse -c linters/phpstan.neon --no-progress --xdebug",
-        "stan-baseline": "vendor/bin/phpstan analyse -c linters/phpstan.neon --no-progress --xdebug --generate-baseline var/log/phpstan-baseline.neon",
-        "test": "vendor/bin/phpunit --configuration phpunit.xml --coverage-clover var/log/phpunit-clover.xml"
+        "test": "vendor/bin/phpunit --configuration phpunit.xml"
     }
 }

@@ -2,20 +2,18 @@
 
 declare(strict_types=1);
 
-namespace OseilleTest\ContainerBuilderBridge;
+namespace OJullienTest\ContainerBuilderBridge;
 
-use OseilleTest\Utils\StubBridge;
-use OseilleTest\Utils\StubBuilder;
+use OJullienTest\Utils\StubBridge;
+use OJullienTest\Utils\StubBuilder;
 
 use function PHPUnit\Framework\assertInstanceOf;
-
-//use PbraidersTest\Utils\EmptyDIFactory;
 
 class AbstractionTest extends \PHPUnit\Framework\TestCase
 {
 
     /**
-     * @covers \Oseille\ContainerBuilderBridge\Abstraction
+     * @covers \OJullien\ContainerBuilderBridge\Abstraction
      * @group specification
      */
     public function testCreateContainer()

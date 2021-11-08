@@ -3,12 +3,12 @@
 declare(strict_types=1);
 
 /**
- * @package Oseille\ContainerBuilderBridge
- * @link    https://github.com/oseille/container-builder-bridge for the canonical source repository
- * @license https://github.com/oseille/container-builder-bridge/blob/master/LICENSE MIT
+ * @package OJullien\ContainerBuilderBridge
+ * @link    https://github.com/ojullien/container-builder-bridge for the canonical source repository
+ * @license https://github.com/ojullien/container-builder-bridge/blob/master/LICENSE MIT
  */
 
-namespace Oseille\ContainerBuilderBridge;
+namespace OJullien\ContainerBuilderBridge;
 
 use Psr\Container\ContainerInterface;
 
@@ -29,7 +29,7 @@ interface ImplementorInterface
      *
      * @param array<int,array> $definitions,... The definitions.
      * @throws \InvalidArgumentException if $id is not valid
-     * @return \Oseille\ContainerBuilderBridge\ImplementorInterface
+     * @return \OJullien\ContainerBuilderBridge\ImplementorInterface
      */
     public function addDefinitions(...$definitions): ImplementorInterface;
 }

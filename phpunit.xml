@@ -42,7 +42,6 @@
         timeoutForSmallTests="1"
         timeoutForMediumTests="10"
         timeoutForLargeTests="60"
-        bootstrap="tests/bootstrap.php"
         verbose="false">
     <php>
         <ini name="display_errors" value="1" />

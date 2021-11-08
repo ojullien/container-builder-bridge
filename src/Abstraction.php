@@ -3,12 +3,12 @@
 declare(strict_types=1);
 
 /**
- * @package Oseille\ContainerBuilderBridge
- * @link    https://github.com/oseille/container-builder-bridge for the canonical source repository
- * @license https://github.com/oseille/container-builder-bridge/blob/master/LICENSE MIT
+ * @package OJullien\ContainerBuilderBridge
+ * @link    https://github.com/ojullien/container-builder-bridge for the canonical source repository
+ * @license https://github.com/ojullien/container-builder-bridge/blob/master/LICENSE MIT
  */
 
-namespace Oseille\ContainerBuilderBridge;
+namespace OJullien\ContainerBuilderBridge;
 
 use Psr\Container\ContainerInterface;
 
@@ -21,7 +21,7 @@ abstract class Abstraction
     /**
      * A implementation of a container builder.
      *
-     * @var \Oseille\ContainerBuilderBridge\ImplementorInterface
+     * @var \OJullien\ContainerBuilderBridge\ImplementorInterface
      */
     protected ImplementorInterface $pContainerBuilder;
 
@@ -58,7 +58,7 @@ abstract class Abstraction
      * Add definitions to the container.
      *
      * @param array<int,array> $definitions,... Array of definitions
-     * @return \Oseille\ContainerBuilderBridge\Abstraction
+     * @return \OJullien\ContainerBuilderBridge\Abstraction
      */
     abstract public function addDefinitions(...$definitions): Abstraction;
 }

@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace OseilleTest\Utils;
+namespace OJullienTest\Utils;
 
-use Oseille\ContainerBuilderBridge\ImplementorInterface;
+use OJullien\ContainerBuilderBridge\ImplementorInterface;
 use Psr\Container\ContainerInterface;
 
 /**
@@ -26,7 +26,7 @@ class StubBuilder implements ImplementorInterface
      * Add definitions to the container.
      *
      * @param array $definitions The definitions.
-     * @return \Oseille\ContainerBuilderBridge
+     * @return \OJullien\ContainerBuilderBridge
      */
     public function addDefinitions(...$definitions): ImplementorInterface
     {

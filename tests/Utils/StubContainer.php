@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace OseilleTest\Utils;
+namespace OJullienTest\Utils;
 
 use Psr\Container\ContainerInterface;
 use Psr\Container\NotFoundExceptionInterface;
@@ -23,7 +23,7 @@ class StubContainer implements ContainerInterface
      *
      * @return mixed Entry.
      */
-    public function get($id)
+    public function get(string $id)
     {
         return $id;
     }
@@ -39,7 +39,7 @@ class StubContainer implements ContainerInterface
      *
      * @return bool
      */
-    public function has($id)
+    public function has(string $id): bool
     {
         return true;
     }
