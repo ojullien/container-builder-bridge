@@ -49,13 +49,13 @@
         "optimize-autoloader": true
     },
     "scripts": {
-        "check-cs": "vendor/bin/phpcs --standard=linters/phpcs.xml --report=checkstyle --report-file=var/log/phpcs_report.xml",
+        "check-cs": "vendor/bin/phpcs --standard=.github/linters/phpcs.xml --report=checkstyle",
         "fix-cs": [
             "@squizlabs"
         ],
-        "psalm": "vendor/bin/psalm --config=linters/psalm.xml --threads=4 --show-info=true",
-        "squizlabs": "vendor/bin/phpcbf --standard=linters/phpcs.xml --no-cache",
-        "stan": "vendor/bin/phpstan analyse -c linters/phpstan.neon --no-progress --xdebug",
+        "psalm": "vendor/bin/psalm --config=.github/linters/psalm.xml --threads=4 --show-info=true",
+        "squizlabs": "vendor/bin/phpcbf --standard=.github/linters/phpcs.xml --no-cache",
+        "stan": "vendor/bin/phpstan analyse -c .github/linters/phpstan.neon --no-progress --xdebug",
         "test": "vendor/bin/phpunit --configuration phpunit.xml"
     }
 }

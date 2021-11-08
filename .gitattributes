@@ -3,7 +3,6 @@
 
 # Documantation files and vendored files are excluded from language statistics.
 /.github/* linguist-vendored
-/linters/* linguist-vendored
 /doc[s]/* linguist-documentation
 /var/* linguist-vendored
 /vendor/* linguist-vendored
@@ -27,7 +26,6 @@
 
 # Files and directories with the attribute export-ignore won’t be added to archive files.
 /.github/ export-ignore
-/linters/ export-ignore
 /tests/ export-ignore
 /var/ export-ignore
 /.gitattributes export-ignore

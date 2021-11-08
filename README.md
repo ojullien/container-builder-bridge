@@ -6,6 +6,9 @@ A bridge to easily work with multiple types of PSR-11 container builder like DI\
 
 _Note: The package defines only the abstraction and the implementation interface._
 
+[![Lint Code Base](https://github.com/ojullien/container-builder-bridge/actions/workflows/linter.yml/badge.svg)](https://github.com/ojullien/container-builder-bridge/actions/workflows/linter.yml)
+[![Tests](https://github.com/ojullien/container-builder-bridge/actions/workflows/tests.yml/badge.svg)](https://github.com/ojullien/container-builder-bridge/actions/workflows/tests.yml)
+
 ## Requirements
 
 - PHP: ^8.0

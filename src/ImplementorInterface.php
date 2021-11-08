@@ -1,12 +1,12 @@
 <?php
 
-declare(strict_types=1);
-
 /**
  * @package OJullien\ContainerBuilderBridge
  * @link    https://github.com/ojullien/container-builder-bridge for the canonical source repository
  * @license https://github.com/ojullien/container-builder-bridge/blob/master/LICENSE MIT
  */
+
+declare(strict_types=1);
 
 namespace OJullien\ContainerBuilderBridge;
 

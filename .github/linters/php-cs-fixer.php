@@ -1,8 +1,8 @@
 <?php
 
 $finder = (new PhpCsFixer\Finder())
-    ->in(dirname(__DIR__ . '/..'))
-    ->exclude('linters')
+    ->in(dirname(__DIR__ . '/../..'))
+    ->exclude('tests')
     ->exclude('var')
     ->exclude('vendor');
 
