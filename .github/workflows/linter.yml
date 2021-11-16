@@ -34,4 +34,4 @@ jobs:
           VALIDATE_PHP_PHPSTAN: true
 #          VALIDATE_PHP_PSALM: true
           LINTER_RULES_PATH: .github/linters
-          FILTER_REGEX_EXCLUDE: '(composer.lock)'
+#          FILTER_REGEX_EXCLUDE: '(composer.lock)'
