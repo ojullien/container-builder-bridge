@@ -57,7 +57,7 @@
         "psalm": "vendor/bin/psalm --config=.github/linters/psalm.xml --show-info=true --long-progress --stats --threads=8 --diff",
         "squizlabs": "vendor/bin/phpcbf --standard=.github/linters/phpcs.xml --no-cache",
         "stan": "vendor/bin/phpstan analyse -c .github/linters/phpstan.neon --no-progress --xdebug",
-        "test": "vendor/bin/phpunit --configuration phpunit.xml",
-        "test-coverage": "vendor/bin/phpunit --configuration phpunit.xml --coverage-clover clover.xml"
+        "test": "vendor/bin/phpunit --configuration phpunit.xml -v",
+        "test-coverage": "vendor/bin/phpunit --configuration phpunit.xml --coverage-html var/coverage"
     }
 }

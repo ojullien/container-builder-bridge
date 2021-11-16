@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace OJullienTest\Utils;
 
+use OJullien\ContainerBuilderBridge\Definition\SequenceInterface;
 use OJullien\ContainerBuilderBridge\ImplementorInterface;
 use Psr\Container\ContainerInterface;
 
@@ -25,10 +26,10 @@ class StubBuilder implements ImplementorInterface
     /**
      * Add definitions to the container.
      *
-     * @param array ...$definitions
+     * @param SequenceInterface $definitions
      * @return \OJullien\ContainerBuilderBridge\ImplementorInterface
      */
-    public function addDefinitions(...$definitions): ImplementorInterface
+    public function addDefinitions(SequenceInterface ...$definitions): ImplementorInterface
     {
         return $this;
     }

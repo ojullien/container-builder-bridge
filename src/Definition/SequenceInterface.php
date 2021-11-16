@@ -13,7 +13,7 @@ namespace OJullien\ContainerBuilderBridge\Definition;
 /**
  *The interface for all sequences.
  */
-interface SequenceInterface
+interface SequenceInterface extends \Countable, \IteratorAggregate
 {
     /**
      * Returns the sequence
@@ -23,10 +23,16 @@ interface SequenceInterface
     public static function getSequence(): static;
 
     /**
-     * Returns true if the definition is already in the sequence
+     * Adds a definition to the sequence.
      *
-     * @param string $name
-     * @return boolean
+     * examples:
+     * ->add(Acme\Foo::class)
+     * ->add(Acme\BarInterface::class,Acme\BarA::class)
+     * ->add('service',function...)
+     *
+     * @param string $alias Alias or classname
+     * @param string|callable|null $definition
+     * @return static
      */
-    public function has(string $name): bool;
+    public function withDefinition(string $alias, string|callable|null $definition = null): static;
 }

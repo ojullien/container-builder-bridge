@@ -6,6 +6,7 @@ namespace OJullienTest\Utils;
 
 use Psr\Container\ContainerInterface;
 use OJullien\ContainerBuilderBridge\Abstraction;
+use OJullien\ContainerBuilderBridge\Definition\SequenceInterface;
 
 class StubBridge extends Abstraction
 {
@@ -22,10 +23,10 @@ class StubBridge extends Abstraction
     /**
      * Add definitions to the container.
      *
-     * @param array $definitions Array of definitions
+     * @param SequenceInterface $definitions Definitions
      * @return \OJullien\ContainerBuilderBridge\Abstraction
      */
-    public function addDefinitions(...$definitions): Abstraction
+    public function addDefinitions(SequenceInterface ...$definitions): Abstraction
     {
         return $this;
     }

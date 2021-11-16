@@ -20,7 +20,7 @@
     ignoreInternalFunctionNullReturn="false"
     inferPropertyTypesFromConstructor="true"
     findUnusedVariablesAndParams="true"
-    findUnusedCode="true"
+    findUnusedCode="false"
     findUnusedPsalmSuppress="true"
     loadXdebugStub="false"
     ensureArrayStringOffsetsExist="true"
