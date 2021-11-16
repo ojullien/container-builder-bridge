@@ -60,5 +60,5 @@ abstract class Abstraction
      * @param array<int,array> $definitions,... Array of definitions
      * @return \OJullien\ContainerBuilderBridge\Abstraction
      */
-    abstract public function addDefinitions(...$definitions): Abstraction;
+    abstract public function addDefinitions(array ...$definitions): Abstraction;
 }

@@ -7,8 +7,6 @@ namespace OJullienTest\ContainerBuilderBridge;
 use OJullienTest\Utils\StubBridge;
 use OJullienTest\Utils\StubBuilder;
 
-use function PHPUnit\Framework\assertInstanceOf;
-
 class AbstractionTest extends \PHPUnit\Framework\TestCase
 {
 
@@ -22,6 +20,6 @@ class AbstractionTest extends \PHPUnit\Framework\TestCase
         $pBridge = new StubBridge($pBuilder);
         $pBridge->setContainerBuilder($pBuilder);
         $pContainer = $pBridge->build();
-        $this->assertInstanceOf('\Psr\Container\ContainerInterface', $pContainer);
+        self::assertInstanceOf('\Psr\Container\ContainerInterface', $pContainer);
     }
 }

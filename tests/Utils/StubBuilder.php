@@ -25,8 +25,8 @@ class StubBuilder implements ImplementorInterface
     /**
      * Add definitions to the container.
      *
-     * @param array $definitions The definitions.
-     * @return \OJullien\ContainerBuilderBridge
+     * @param array ...$definitions
+     * @return \OJullien\ContainerBuilderBridge\ImplementorInterface
      */
     public function addDefinitions(...$definitions): ImplementorInterface
     {
