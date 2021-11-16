@@ -50,10 +50,15 @@
         "optimize-autoloader": true
     },
     "scripts": {
-        "check-cs": "vendor/bin/phpcs --standard=.github/linters/phpcs.xml --report=checkstyle",
-        "fix-cs": [
+        "check": [
+            "@phpcs",
+            "@stan",
+            "@psalm"
+        ],
+        "fix": [
             "@squizlabs"
         ],
+        "phpcs": "vendor/bin/phpcs --standard=.github/linters/phpcs.xml --report=checkstyle",
         "psalm": "vendor/bin/psalm --config=.github/linters/psalm.xml --show-info=true --long-progress --stats --threads=8 --diff",
         "squizlabs": "vendor/bin/phpcbf --standard=.github/linters/phpcs.xml --no-cache",
         "stan": "vendor/bin/phpstan analyse -c .github/linters/phpstan.neon --no-progress --xdebug",

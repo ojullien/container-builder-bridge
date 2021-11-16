@@ -15,6 +15,8 @@ class SequenceTest extends \PHPUnit\Framework\TestCase
     /**
      * @covers \OJullien\ContainerBuilderBridge\Definition\Sequence
      * @group specification
+     * @throws \SebastianBergmann\RecursionContext\InvalidArgumentException
+     * @throws \PHPUnit\Framework\Exception
      * @return void
      */
     public function testGetSequence(): void
@@ -26,6 +28,8 @@ class SequenceTest extends \PHPUnit\Framework\TestCase
     /**
      * @covers \OJullien\ContainerBuilderBridge\Definition\Sequence
      * @group specification
+     * @throws \SebastianBergmann\RecursionContext\InvalidArgumentException
+     * @throws \PHPUnit\Framework\Exception
      * @return void
      */
     public function testSequence()
@@ -43,6 +47,8 @@ class SequenceTest extends \PHPUnit\Framework\TestCase
     /**
      * @covers \OJullien\ContainerBuilderBridge\Definition\Sequence
      * @group specification
+     * @throws \SebastianBergmann\RecursionContext\InvalidArgumentException
+     * @throws \PHPUnit\Framework\Exception
      * @return void
      */
     public function testError()
@@ -58,6 +64,8 @@ class SequenceTest extends \PHPUnit\Framework\TestCase
     /**
      * @covers \OJullien\ContainerBuilderBridge\Definition\Sequence
      * @group specification
+     * @throws \SebastianBergmann\RecursionContext\InvalidArgumentException
+     * @throws \PHPUnit\Framework\Exception
      * @return void
      */
     public function testiterator()
