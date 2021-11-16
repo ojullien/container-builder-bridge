@@ -11,14 +11,16 @@ _Note: The package defines only the abstraction and the implementation interface
 
 ## Requirements
 
+This package requires:
+
 - PHP: ^8.0
 - psr/container: ^2.0
 
-## Installation
-
-This package requires PHP 8.0. For specifics, please examine the package [composer.json](https://github.com/ojullien/container-builder-bridge/blob/master/composer.json) file.
+For specifics, please examine the manifest [composer.json](https://github.com/ojullien/container-builder-bridge/blob/master/composer.json) file.
 
 You may check if your PHP and extension versions match the platform requirements using `composer diagnose` and `composer check-platform-reqs`. (This requires [Composer](https://getcomposer.org/) to be available as composer.)
+
+## Installation
 
 This package is installable and PSR-4 autoloadable via [Composer](https://getcomposer.org/) as ojullien/container-builder-bridge. For no dev, use `composer install --no-dev` and for dev, use `composer install`.
 
@@ -30,7 +32,7 @@ See [container-builder-bridge-php-di](https://github.com/ojullien/container-buil
 
 ## Test
 
-To run the unit tests at the command line, issue `composer install` and then `./vendor/bin/phpunit` at the package root. (This requires [Composer](https://getcomposer.org/) to be available as composer.)
+To run the unit tests at the command line, issue `composer install` and then `composer run test` at the package root. (This requires [Composer](https://getcomposer.org/) to be available as composer.)
 
 ## Contributing
 
