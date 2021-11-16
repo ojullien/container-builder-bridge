@@ -19,7 +19,7 @@ jobs:
         run: php -v
 
       - name: Validate composer.json and composer.lock
-        run: composer self-update && composer diagnose && composer check-platform-reqs && composer validate
+        run: composer validate
 
       - name: Install dependencies
         run: composer install --prefer-dist --no-progress --no-cache
