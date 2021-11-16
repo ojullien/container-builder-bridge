@@ -6,7 +6,7 @@ includes:
 
 parameters:
     tmpDir: ../../var/cache/phpstan
-    level: 3
+    level: 9
     paths:
         - ../../src
         - ../../tests
