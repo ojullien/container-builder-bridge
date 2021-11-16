@@ -19,6 +19,9 @@ jobs:
         run: php -v
 
       - name: Validate composer.json and composer.lock
+        run: composer self-update
+        run: composer diagnose
+        run: composer check-platform-reqs
         run: composer validate
 
       - name: Install dependencies
@@ -31,7 +34,7 @@ jobs:
           DEFAULT_BRANCH: master
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           VALIDATE_PHP_PHPCS: true
-          VALIDATE_PHP_PHPSTAN: true
+#          VALIDATE_PHP_PHPSTAN: true
           VALIDATE_PHP_PSALM: true
           LINTER_RULES_PATH: .github/linters
-          FILTER_REGEX_EXCLUDE: '(composer.lock)'
+#          FILTER_REGEX_EXCLUDE: '(composer.lock)'

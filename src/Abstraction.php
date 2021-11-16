@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace OJullien\ContainerBuilderBridge;
 
+use OJullien\ContainerBuilderBridge\Definition\SequenceInterface;
 use Psr\Container\ContainerInterface;
 
 /**
@@ -57,8 +58,8 @@ abstract class Abstraction
     /**
      * Add definitions to the container.
      *
-     * @param array<int,array> $definitions,... Array of definitions
+     * @param SequenceInterface $definitions,... Array of definitions
      * @return \OJullien\ContainerBuilderBridge\Abstraction
      */
-    abstract public function addDefinitions(...$definitions): Abstraction;
+    abstract public function addDefinitions(SequenceInterface ...$definitions): Abstraction;
 }

@@ -10,6 +10,7 @@ declare(strict_types=1);
 
 namespace OJullien\ContainerBuilderBridge;
 
+use OJullien\ContainerBuilderBridge\Definition\SequenceInterface;
 use Psr\Container\ContainerInterface;
 
 /**
@@ -27,9 +28,9 @@ interface ImplementorInterface
     /**
      * Add definitions to the container.
      *
-     * @param array<int,array> $definitions,... The definitions.
+     * @param SequenceInterface $definitions,... The definitions.
      * @throws \InvalidArgumentException if $id is not valid
      * @return \OJullien\ContainerBuilderBridge\ImplementorInterface
      */
-    public function addDefinitions(...$definitions): ImplementorInterface;
+    public function addDefinitions(SequenceInterface ...$definitions): ImplementorInterface;
 }
