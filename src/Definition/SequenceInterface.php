@@ -11,7 +11,8 @@ declare(strict_types=1);
 namespace OJullien\ContainerBuilderBridge\Definition;
 
 /**
- *The interface for all sequences.
+ * The interface for all sequences.
+ * @extends \IteratorAggregate<string,string|callable>
  */
 interface SequenceInterface extends \Countable, \IteratorAggregate
 {
