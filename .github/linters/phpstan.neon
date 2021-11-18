@@ -14,4 +14,3 @@ parameters:
         - ../../.github
         - ../../var
         - ../../vendor
-    checkMissingIterableValueType: false
