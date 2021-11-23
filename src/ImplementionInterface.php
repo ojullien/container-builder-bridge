@@ -14,9 +14,9 @@ use OJullien\ContainerBuilderBridge\Definition\SequenceInterface;
 use Psr\Container\ContainerInterface;
 
 /**
- *The interface for all PSR-11 container builder implementation classes.
+ * The interface for all concrete builder implementations.
  */
-interface ImplementorInterface
+interface ImplementionInterface
 {
     /**
      * Builds and returns the PSR-11 container.
@@ -28,9 +28,8 @@ interface ImplementorInterface
     /**
      * Add definitions to the container.
      *
-     * @param SequenceInterface $definitions,... The definitions.
-     * @throws \InvalidArgumentException if $id is not valid
-     * @return \OJullien\ContainerBuilderBridge\ImplementorInterface
+     * @param \OJullien\ContainerBuilderBridge\Definition\SequenceInterface ...$definitions
+     * @return ImplementionInterface
      */
-    public function addDefinitions(SequenceInterface ...$definitions): ImplementorInterface;
+    public function setDefinitions(SequenceInterface ...$definitions): ImplementionInterface;
 }

@@ -14,24 +14,25 @@ use OJullien\ContainerBuilderBridge\Definition\SequenceInterface;
 use Psr\Container\ContainerInterface;
 
 /**
- * Container Builder Bridge abstraction class.
+ * Abstraction class for all builder implementations.
+ * It relies on the implementation object to build and get a PSR-11 container.
  */
-abstract class Abstraction
+abstract class AbstractBuilder
 {
 
     /**
-     * A implementation of a container builder.
+     * The concrete implementation of a container builder.
      *
-     * @var \OJullien\ContainerBuilderBridge\ImplementorInterface
+     * @var \OJullien\ContainerBuilderBridge\ImplementionInterface
      */
-    protected ImplementorInterface $pContainerBuilder;
+    protected ImplementionInterface $pContainerBuilder;
 
     /**
      * Initializes with one of the implementation objects.
      *
-     * @param ImplementorInterface $builder
+     * @param ImplementionInterface $builder
      */
-    public function __construct(ImplementorInterface $builder)
+    public function __construct(ImplementionInterface $builder)
     {
         $this->pContainerBuilder = $builder;
     }
@@ -40,10 +41,10 @@ abstract class Abstraction
      * The Bridge pattern allows replacing the attached implementation object
      * dynamically.
      *
-     * @param ImplementorInterface $builder
+     * @param ImplementionInterface $builder
      * @return void
      */
-    final public function setContainerBuilder(ImplementorInterface $builder): void
+    final public function setContainerBuilder(ImplementionInterface $builder): void
     {
         $this->pContainerBuilder = $builder;
     }
@@ -51,15 +52,8 @@ abstract class Abstraction
     /**
      * Builds and returns the PSR-11 container.
      *
+     * @param \OJullien\ContainerBuilderBridge\Definition\SequenceInterface ...$definitions
      * @return \Psr\Container\ContainerInterface
      */
-    abstract public function build(): ContainerInterface;
-
-    /**
-     * Add definitions to the container.
-     *
-     * @param SequenceInterface $definitions,... Array of definitions
-     * @return \OJullien\ContainerBuilderBridge\Abstraction
-     */
-    abstract public function addDefinitions(SequenceInterface ...$definitions): Abstraction;
+    abstract public function getContainer(SequenceInterface ...$definitions): ContainerInterface;
 }

@@ -11,7 +11,8 @@ declare(strict_types=1);
 namespace OJullien\ContainerBuilderBridge\Definition;
 
 /**
- * Immutable string|callable typed definition sequence
+ * Immutable sequence of typed definitions
+ * Allowed types are values (array|bool|int|float|string) or factory (callable)
  */
 final class Sequence implements SequenceInterface
 {
@@ -19,7 +20,7 @@ final class Sequence implements SequenceInterface
     /**
      * Definitions
      *
-     * @var array<string,string|callable>
+     * @var array<string,array<array-key,scalar>|bool|callable|int|float|string>
      */
     private array $aDefinitions = [];
 
@@ -64,7 +65,7 @@ final class Sequence implements SequenceInterface
     /**
      * Returns an array iterator
      *
-     * @return \Traversable<string,string|callable>
+     * @return \Traversable<string,array<array-key,scalar>|bool|callable|int|float|string>
      */
     public function getIterator(): \Traversable
     {
@@ -75,10 +76,10 @@ final class Sequence implements SequenceInterface
      * Adds a definition to the sequence.
      *
      * @param string $sAlias
-     * @param string|callable $aDefinition
+     * @param array<array-key,scalar>|bool|callable|int|float|string $aDefinition
      * @return static
      */
-    private function clone(string $sAlias, string|callable $aDefinition): static
+    private function clone(string $sAlias, array|bool|callable|int|float|string $aDefinition): static
     {
         /* @var Sequence $aNewSequence*/
         $aNewSequence = clone $this;
@@ -91,15 +92,18 @@ final class Sequence implements SequenceInterface
      * Adds a definition to the sequence.
      *
      * examples:
-     * ->add(Acme\Foo::class)
-     * ->add(Acme\BarInterface::class,Acme\BarA::class)
-     * ->add('service',function...)
+     * ->withDefinition(Acme\Foo::class)
+     * ->withDefinition(Acme\BarInterface::class,Acme\BarA::class)
+     * ->withDefinition('service',function...)
+     * ->withDefinition('database.host', 'localhost')
+     * ->withDefinition('database.port', 5000)
+     * ->withDefinition('report.recipients' => ['bob@example.com','alice@example.com',])
      *
      * @param string $alias Alias or classname
-     * @param string|callable|null $definition
+     * @param array<array-key,scalar>|bool|callable|int|float|string|null $definition
      * @return static
      */
-    public function withDefinition(string $alias, string|callable|null $definition = null): static
+    public function withDefinition(string $alias, array|bool|callable|int|float|string|null $definition = null): static
     {
         $definition = $definition ?? $alias;
         return $this->has($alias) ? $this : $this->clone($alias, $definition);

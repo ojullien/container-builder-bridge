@@ -11,7 +11,7 @@ use Psr\Container\ContainerExceptionInterface;
 /**
  * An implementation of a PSR-11 container.
  */
-class StubContainer implements ContainerInterface
+class ContainerStub implements ContainerInterface
 {
     /**
      * Finds an entry of the container by its identifier and returns it.

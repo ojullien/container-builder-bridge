@@ -34,14 +34,18 @@ class SequenceTest extends \PHPUnit\Framework\TestCase
      */
     public function testSequence()
     {
+        $array = ['bob@example.com', 'alice@example.com',];
         $pSequence = Sequence::getSequence();
         $pSequence = $pSequence->withDefinition('solo')
-            ->withDefinition('service', stdClass::class)
+            ->withDefinition('service', \stdClass::class)
             ->withDefinition('api.url', 'http://api.example.com')
             ->withDefinition('webservice', function () {
-                return new stdClass();
-            });
-        self::assertTrue(4 === $pSequence->count());
+                return new \stdClass();
+            })
+            ->withDefinition('database.host', 'localhost')
+            ->withDefinition('database.port', 5000)
+            ->withDefinition('report.recipients', $array);
+        self::assertTrue(7 === $pSequence->count());
     }
 
     /**
@@ -70,13 +74,17 @@ class SequenceTest extends \PHPUnit\Framework\TestCase
      */
     public function testiterator()
     {
+        $array = ['bob@example.com', 'alice@example.com',];
         $pSequence = Sequence::getSequence();
         $pSequence = $pSequence->withDefinition('solo')
             ->withDefinition('service', stdClass::class)
             ->withDefinition('api.url', 'http://api.example.com')
             ->withDefinition('webservice', function () {
                 return new stdClass();
-            });
+            })
+            ->withDefinition('database.host', 'localhost')
+            ->withDefinition('database.port', 5000)
+            ->withDefinition('report.recipients', $array);
         self::assertInstanceOf(Traversable::class, $pSequence->getIterator());
     }
 }
