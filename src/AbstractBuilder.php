@@ -23,16 +23,16 @@ abstract class AbstractBuilder
     /**
      * The concrete implementation of a container builder.
      *
-     * @var \OJullien\ContainerBuilderBridge\ImplementionInterface
+     * @var \OJullien\ContainerBuilderBridge\ImplementationInterface
      */
-    protected ImplementionInterface $pContainerBuilder;
+    protected ImplementationInterface $pContainerBuilder;
 
     /**
      * Initializes with one of the implementation objects.
      *
-     * @param ImplementionInterface $builder
+     * @param ImplementationInterface $builder
      */
-    public function __construct(ImplementionInterface $builder)
+    public function __construct(ImplementationInterface $builder)
     {
         $this->pContainerBuilder = $builder;
     }
@@ -41,10 +41,10 @@ abstract class AbstractBuilder
      * The Bridge pattern allows replacing the attached implementation object
      * dynamically.
      *
-     * @param ImplementionInterface $builder
+     * @param ImplementationInterface $builder
      * @return void
      */
-    final public function setContainerBuilder(ImplementionInterface $builder): void
+    final public function setContainerBuilder(ImplementationInterface $builder): void
     {
         $this->pContainerBuilder = $builder;
     }

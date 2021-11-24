@@ -16,7 +16,7 @@ use Psr\Container\ContainerInterface;
 /**
  * The interface for all concrete builder implementations.
  */
-interface ImplementionInterface
+interface ImplementationInterface
 {
     /**
      * Builds and returns the PSR-11 container.
@@ -29,7 +29,7 @@ interface ImplementionInterface
      * Add definitions to the container.
      *
      * @param \OJullien\ContainerBuilderBridge\Definition\SequenceInterface ...$definitions
-     * @return ImplementionInterface
+     * @return ImplementationInterface
      */
-    public function setDefinitions(SequenceInterface ...$definitions): ImplementionInterface;
+    public function setDefinitions(SequenceInterface ...$definitions): ImplementationInterface;
 }

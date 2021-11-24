@@ -5,13 +5,13 @@ declare(strict_types=1);
 namespace OJullienTest\Utils;
 
 use OJullien\ContainerBuilderBridge\Definition\SequenceInterface;
-use OJullien\ContainerBuilderBridge\ImplementionInterface;
+use OJullien\ContainerBuilderBridge\ImplementationInterface;
 use Psr\Container\ContainerInterface;
 
 /**
  * An implementation of a PSR-11 container builder.
  */
-class ImplementationStub implements ImplementionInterface
+class ImplementationStub implements ImplementationInterface
 {
 
     /**
@@ -28,9 +28,9 @@ class ImplementationStub implements ImplementionInterface
      * Add definitions to the container.
      *
      * @param \OJullien\ContainerBuilderBridge\Definition\SequenceInterface ...$definitions
-     * @return \OJullien\ContainerBuilderBridge\ImplementionInterface
+     * @return \OJullien\ContainerBuilderBridge\ImplementationInterface
      */
-    public function setDefinitions(SequenceInterface ...$definitions): ImplementionInterface
+    public function setDefinitions(SequenceInterface ...$definitions): ImplementationInterface
     {
         return $this;
     }
