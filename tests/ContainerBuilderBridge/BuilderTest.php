@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace OJullienTest\ContainerBuilderBridge;
 
+use OJullien\ContainerBuilderBridge\Builder;
 use OJullien\ContainerBuilderBridge\Definition\Sequence;
-use OJullienTest\Utils\AbstractionStub;
 use OJullienTest\Utils\ImplementationStub;
 use Psr\Container\ContainerInterface;
 
-class AbstractionTest extends \PHPUnit\Framework\TestCase
+class BuilderTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @covers \OJullien\ContainerBuilderBridge\AbstractBuilder
@@ -37,14 +37,14 @@ class AbstractionTest extends \PHPUnit\Framework\TestCase
             ->withDefinition('report.recipients', $array);
 
         // Set a builder implementation
-        $pBuilder = new ImplementationStub();
+        $pImplementation = new ImplementationStub();
 
         // Set a bridge
-        $pBridge = new AbstractionStub($pBuilder);
-        $pBridge->setContainerBuilder($pBuilder);
+        $pBuilder = new Builder($pImplementation);
+        $pBuilder->setContainerBuilder($pImplementation);
 
         // Get container
-        $pContainer = $pBridge->getContainer($pSequence1, $pSequence2);
+        $pContainer = $pBuilder->getContainer($pSequence1, $pSequence2);
         self::assertInstanceOf(ContainerInterface::class, $pContainer);
     }
 }
