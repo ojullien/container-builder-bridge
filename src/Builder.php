@@ -17,7 +17,7 @@ use Psr\Container\ContainerInterface;
  * Abstraction class for all builder implementations.
  * It relies on the implementation object to build and get a PSR-11 container.
  */
-abstract class AbstractBuilder
+class Builder
 {
 
     /**
@@ -55,5 +55,8 @@ abstract class AbstractBuilder
      * @param \OJullien\ContainerBuilderBridge\Definition\SequenceInterface ...$definitions
      * @return \Psr\Container\ContainerInterface
      */
-    abstract public function getContainer(SequenceInterface ...$definitions): ContainerInterface;
+    public function getContainer(SequenceInterface ...$definitions): ContainerInterface
+    {
+        return $this->pContainerBuilder->setDefinitions(...$definitions)->build();
+    }
 }
